@@ -176,3 +176,44 @@ To ensure proper initialization of the parent class, the child class constructor
 Once the super() method is called and the parent class has been initialized, the child class constructor can safely make use of the this reference to access its own properties and methods, as well as any inherited properties and methods from the parent class.
 
 If the child class constructor were to use the this reference before the super() method is called, it could potentially access uninitialized properties or methods inherited from the parent class, leading to undefined behavior or errors. Therefore, it is a language rule to call the super() method as the first statement in the child class constructor to ensure proper initialization of the parent class before the child class can use the this reference.
+
+
+#  What is map function in Python?
+
+In Python, the `map()` function is a built-in higher-order function that applies a given function to each item of an iterable (e.g., a list, tuple, or string) and returns an iterator with the results. It allows you to transform the elements of the iterable based on the provided function.
+
+The syntax of the `map()` function is as follows:
+
+```python
+map(function, iterable)
+```
+
+- `function`: The function to be applied to each element of the iterable. It can be a built-in function, a lambda function, or a custom-defined function.
+- `iterable`: An iterable object (e.g., list, tuple, string) whose elements will be passed to the function.
+
+Here's an example to illustrate the usage of `map()`:
+
+```python
+def square(x):
+    return x ** 2
+
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = map(square, numbers)
+
+print(list(squared_numbers))  # Output: [1, 4, 9, 16, 25]
+```
+
+In the example above, the `map()` function applies the `square()` function to each element of the `numbers` list. It returns an iterator, which is converted to a list using `list()`. The resulting `squared_numbers` list contains the squares of the original numbers.
+
+`map()` can also be used with lambda functions for more concise and inline transformations. Here's an example:
+
+```python
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = map(lambda x: x ** 2, numbers)
+
+print(list(squared_numbers))  # Output: [1, 4, 9, 16, 25]
+```
+
+In this case, a lambda function is defined directly inside the `map()` function, eliminating the need for a separate `square()` function.
+
+The `map()` function is a powerful tool in Python for applying a function to multiple elements of an iterable and obtaining the transformed results. It provides a concise and expressive way to perform element-wise operations.
