@@ -217,3 +217,36 @@ print(list(squared_numbers))  # Output: [1, 4, 9, 16, 25]
 In this case, a lambda function is defined directly inside the `map()` function, eliminating the need for a separate `square()` function.
 
 The `map()` function is a powerful tool in Python for applying a function to multiple elements of an iterable and obtaining the transformed results. It provides a concise and expressive way to perform element-wise operations.
+
+
+# What is the function of "self" in python?
+
+In Python, the `self` parameter is used within a class definition to refer to the instance of that class. It is a convention to name the first parameter of instance methods as `self`, although you can technically choose any valid parameter name.
+
+When you create an object (an instance) of a class, the methods defined within that class can access and operate on the object's data through the `self` parameter. It acts as a reference to the current instance of the class and allows you to access its attributes and invoke its methods.
+
+Here's an example to illustrate the usage of `self`:
+
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+
+# Creating an instance of the Person class
+john = Person("John", 25)
+
+# Accessing instance attributes using self
+print(john.name)  # Output: John
+print(john.age)   # Output: 25
+
+# Invoking instance method using self
+john.greet()  # Output: Hello, my name is John and I am 25 years old.
+```
+
+In the example above, the `Person` class has an `__init__()` method (the constructor) that takes `name` and `age` as parameters. Within the `__init__()` method, the `self` parameter is used to assign the provided values to the instance attributes `name` and `age`. Later, the `greet()` method is defined, which uses `self.name` and `self.age` to access the attributes of the current instance and print a greeting.
+
+By using `self` as the first parameter in instance methods, you can differentiate between instance-specific attributes and methods from those defined at the class level. It allows you to access and manipulate the state of the current object within the class methods, providing a way to encapsulate and work with object data.
