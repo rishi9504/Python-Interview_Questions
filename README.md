@@ -1,7 +1,36 @@
 # Python-Interview_Questions
-# Interview questions for Python and it's libraries added from various sources.
+### Interview questions for Python and it's libraries added from various sources. 
 
-# Describe the core principles of a REST API. How is this a different philosophy from RPC?
+### Questions
+
+### 1. [Describe the core principles of a REST API. How is this a different philosophy from RPC?](https://github.com/rishi9504/Python-Interview_Questions/blob/main/README.md#describe-the-core-principles-of-a-rest-api-how-is-this-a-different-philosophy-from-rpc)
+
+### 2. [Do arguments in Python get passed by reference or by value?](https://github.com/rishi9504/Python-Interview_Questions/tree/main#do-arguments-in-python-get-passed-by-reference-or-by-value)
+
+### 3. [Why are functions considered first class objects in Python?](https://github.com/rishi9504/Python-Interview_Questions/tree/main#why-are-functions-considered-first-class-objects-in-python)
+
+### 4. [Give an example of filter and reduce over an iterable object in python](https://github.com/rishi9504/Python-Interview_Questions/tree/main#give-an-example-of-filter-and-reduce-over-an-iterable-object-in-python)
+
+### 5. [What do we mean when we say that a certain Lambda expression forms a closure?](https://github.com/rishi9504/Python-Interview_Questions/tree/main#what-do-we-mean-when-we-say-that-a-certain-lambda-expression-forms-a-closure)
+
+### 6.  [Python uses a Global Interpreter Lock. Does that mean it doesn’t use real threads?](https://github.com/rishi9504/Python-Interview_Questions/tree/main#python-uses-a-global-interpreter-lock-does-that-mean-it-doesnt-use-real-threads)
+
+### 7. [Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really work in parallel? What about the GIL?](https://github.com/rishi9504/Python-Interview_Questions/tree/main#is-it-possible-to-have-a-producer-thread-reading-from-the-network-and-a-consumer-thread-writing-to-a-file-really-work-in-parallel-what-about-the-gil)
+
+### 8.  [Why does a child class constructor cannot make use of this reference until the super() method has been called?](https://github.com/rishi9504/Python-Interview_Questions/tree/main#why-does-a-child-class-constructor-cannot-make-use-of-this-reference-until-the-super-method-has-been-called)
+
+### 9. [What is map function in Python?](https://github.com/rishi9504/Python-Interview_Questions/tree/main#what-is-map-function-in-python)
+
+### 10. [What is the function of "self" in python?](https://github.com/rishi9504/Python-Interview_Questions/tree/main#what-is-the-function-of-self-in-python)
+
+### []()
+
+### []()
+
+### []()
+
+### []()
+ ### Describe the core principles of a REST API. How is this a different philosophy from RPC?
 
 The core principles of a REST (Representational State Transfer) API are as follows:
 
@@ -29,7 +58,7 @@ Now, let's compare the philosophy of REST APIs with RPC (Remote Procedure Call):
 
  REST APIs emphasize a stateless, uniform, resource-oriented approach with a focus on leveraging standard protocols, while RPC APIs provide a more procedure-oriented approach with potential flexibility in communication protocols and error handling mechanisms.
  
- # Do arguments in Python get passed by reference or by value?
+ ### Do arguments in Python get passed by reference or by value?
 
 In Python, arguments are passed by object reference, which means that when a function is called, the references to objects are passed as arguments rather than the actual values of the objects. This behavior is often described as "pass by assignment" or "pass by object reference."
 
@@ -48,7 +77,7 @@ To summarize, Python uses a form of "pass by object reference" where the referen
 
 
 
-# Why are functions considered first class objects in Python?
+### Why are functions considered first class objects in Python?
 
 Functions are considered first-class objects in Python because they possess the following characteristics:
 
@@ -69,7 +98,7 @@ The ability of functions to be assigned to variables, stored in data structures,
 
 
 
-# Give an example of filter and reduce over an iterable object in python
+### Give an example of filter and reduce over an iterable object in python
 
 Certainly! Here's an example that demonstrates the use of filter() and reduce() functions over an iterable object in Python:
 
@@ -104,7 +133,7 @@ Note that the reduce() function is imported from the functools module in Python,
 
 
 
-# What do we mean when we say that a certain Lambda expression forms a closure?
+### What do we mean when we say that a certain Lambda expression forms a closure?
 
 When we say that a lambda expression forms a closure, it means that the lambda function captures and remembers the values of variables from its surrounding environment, even if those variables are no longer in scope.
 
@@ -133,7 +162,7 @@ Closures are powerful because they allow functions to retain and access the stat
 
 
 
-# Python uses a Global Interpreter Lock. Does that mean it doesn’t use real threads?
+### Python uses a Global Interpreter Lock. Does that mean it doesn’t use real threads?
 
 Python does use threads, but due to the Global Interpreter Lock (GIL), it implements a form of concurrency known as "threading" rather than "parallelism." The GIL is a mechanism in CPython (the reference implementation of Python) that ensures only one thread executes Python bytecode at a time.
 
@@ -150,7 +179,7 @@ In summary, Python does use threads, but the Global Interpreter Lock restricts t
 
 
 
-# Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really work in parallel? What about the GIL?
+### Is it possible to have a producer thread reading from the network and a consumer thread writing to a file, really work in parallel? What about the GIL?
 
 Yes, it is possible to have a producer thread reading from the network and a consumer thread writing to a file work concurrently, even though the Global Interpreter Lock (GIL) exists in Python. This is because the GIL primarily affects CPU-bound tasks where multiple threads are executing Python bytecode simultaneously.
 
@@ -163,7 +192,7 @@ It's worth noting that if the tasks involve significant CPU computations or heav
 To summarize, while the GIL restricts simultaneous execution of Python bytecode by multiple threads, it has less impact on I/O-bound tasks. Consequently, a producer thread reading from the network and a consumer thread writing to a file can effectively work in parallel, making concurrent progress despite the GIL's presence.
 
 
-# Why does a child class constructor cannot make use of this reference until the super() method has been called?
+### Why does a child class constructor cannot make use of this reference until the super() method has been called?
 
 In object-oriented programming, when you create a child class that extends a parent class, the child class inherits the properties and behaviors of the parent class. This inheritance includes the constructors of the parent class.
 
@@ -178,7 +207,7 @@ Once the super() method is called and the parent class has been initialized, the
 If the child class constructor were to use the this reference before the super() method is called, it could potentially access uninitialized properties or methods inherited from the parent class, leading to undefined behavior or errors. Therefore, it is a language rule to call the super() method as the first statement in the child class constructor to ensure proper initialization of the parent class before the child class can use the this reference.
 
 
-#  What is map function in Python?
+###  What is map function in Python?
 
 In Python, the `map()` function is a built-in higher-order function that applies a given function to each item of an iterable (e.g., a list, tuple, or string) and returns an iterator with the results. It allows you to transform the elements of the iterable based on the provided function.
 
@@ -219,7 +248,7 @@ In this case, a lambda function is defined directly inside the `map()` function,
 The `map()` function is a powerful tool in Python for applying a function to multiple elements of an iterable and obtaining the transformed results. It provides a concise and expressive way to perform element-wise operations.
 
 
-# What is the function of "self" in python?
+### What is the function of "self" in python?
 
 In Python, the `self` parameter is used within a class definition to refer to the instance of that class. It is a convention to name the first parameter of instance methods as `self`, although you can technically choose any valid parameter name.
 
